@@ -1,0 +1,38 @@
+{
+  "name": "rmen",
+  "version": "1.0.0",
+  "description": "rmen",
+  "main": "index.js",
+  "scripts": {
+    "test": "\"\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zestxjest/RMEN.git"
+  },
+  "keywords": [
+    "react",
+    "node",
+    "express",
+    "mongodb",
+    "react-bootstrap",
+    "redux",
+    "redux-rooter"
+  ],
+  "author": "Dean Zhao",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zestxjest/RMEN/issues"
+  },
+  "homepage": "https://github.com/zestxjest/RMEN#readme",
+  "dependencies": {
+    "react": "^0.14.3",
+    "react-bootstrap": "^0.28.1",
+    "react-dom": "^0.14.3",
+    "redux": "^3.0.5",
+    "redux-logger": "^2.2.1",
+    "redux-router": "^1.0.0-beta5",
+    "redux-thunk": "^1.0.1",
+    "reselect": "^2.0.1"
+  }
+}
