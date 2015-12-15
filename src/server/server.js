@@ -4,7 +4,7 @@ import webpackConfig from '../../webpack.config';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 import React from 'react';
-import ReactDom from 'react-dom';
+import ReactDomServer from 'react-dom/server';
 import {Provider} from 'react-redux';
 import configureStore from '../universal/store/configureStore';
 import App from '../universal/containers/App/App.js';
@@ -16,7 +16,7 @@ const renderFullPage = (html, initialState) => {
     <html>
       <head>
         <meta charset="utf-8">
-        <title>Isomorphic Redux Example</title>
+        <title>RMEN</title>
         <link rel="stylesheet" type="text/css" href="/static/app.css">
       </head>
       <body>
@@ -38,7 +38,7 @@ if(process.env.NODE_ENV !== 'production'){
   app.use('/static', express.static(__dirname + '/../../dist'));
 }
 
-app.get('/*', function (req, res) {
+app.get('*', function (req, res) {
   const store = configureStore();
 
   const InitialView = (
@@ -46,9 +46,9 @@ app.get('/*', function (req, res) {
       <App />
     </Provider>
   );
-  const componentHTML = React.renderToString(InitialView);
-  const initialState = store.getState();
-  res.status(200).end(renderFullPage(componentHTML, initialState));
+  const componentHTML = ReactDomServer.renderToString(InitialView);
+  //const initialState = store.getState();
+  res.status(200).end(renderFullPage(componentHTML));
 });
 
 const server = app.listen(3002, function () {
